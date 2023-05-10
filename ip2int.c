@@ -9,7 +9,7 @@ int main(int argc, char *argv[]) {
     int octs[8];
     printf("\033c\033[44;37m\n");
     if (argc != 2) {
-        printf("Usage: %s filename.csv\n", argv[0]);
+        printf("Usage: %s ip.ip.ip.ip\n", argv[0]);
         return 1;
     }
 
