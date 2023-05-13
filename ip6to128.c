@@ -34,7 +34,7 @@ int main(int argc, char *argv[]) {
         if(i!=8)exit(0);
         // Print fields separated by tabs
         for (int j = 0; j < i; j++) {
-            octs[j]=strtol(fields[j], NULL, 32);
+            octs[j]=strtol(fields[j], NULL, 16);
             if(octs[j]>=(256*256) || octs[j]<=-1)exit(0);
         }
 
