@@ -1,4 +1,4 @@
-# Mingw.ip.util
+# Mingw.web.master
 util to ip converter
 
-utilitys usefuls for making a software registry by a MIC network board
+utilitys usefuls for making a software registry by a NIC network board
