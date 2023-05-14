@@ -1,4 +1,4 @@
-# Mingw.web.master
-util to ip converter
+# linux.on.windows
 
-utilitys usefuls for making a software registry by a NIC network board
+https://www.msys2.org/
+
