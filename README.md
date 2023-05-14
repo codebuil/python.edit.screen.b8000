@@ -1,5 +1,10 @@
 # linux.on.windows
 
 https://www.msys2.org/
-https://www.msys2.org/docs/what-is-msys2/
+
+$>chmod 777 *.sh
+$>./install.sh
+$>./utils.sh
+$>./gcc.sh
+
 
