@@ -5,5 +5,8 @@ https://www.msys2.org/docs/what-is-msys2/
 
 install gcc:
 $>pacman -S gcc
+geting gcc source:
+$>mkdir gcc
+git clone git://gcc.gnu.org/git/gcc.git ./gcc
 
 
