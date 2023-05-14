@@ -3,3 +3,7 @@
 https://www.msys2.org/
 https://www.msys2.org/docs/what-is-msys2/
 
+install gcc:
+$>pacman -S gcc
+
+
