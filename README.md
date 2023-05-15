@@ -1,6 +1,6 @@
-# linux.on.windows
+#i386.cross.compiler.builder
 
-https://www.msys2.org/
+
 
 $>chmod 777 *.sh
 
