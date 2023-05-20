@@ -1,1 +1,0 @@
-wget "https://github.com/jbruchon/gcc-ia16/archive/refs/heads/gcc-6_3_0-ia16-tkchia.zip"
