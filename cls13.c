@@ -21,6 +21,7 @@ int hliney;
 int hlinex1;
 int hliney1;
 int hlinecolor;
+	char a;	
 	int c;
 	int d;
 	int tt;
@@ -49,7 +50,7 @@ for (c=0;c<200;c++)
 			hlines(hlinex,hliney,hlinex1,hliney1,hlinecolor);
 	}
 refresh();
-sleep(10000);
+a=(char)getccc();
 screen3();
 }
 
@@ -72,6 +73,16 @@ int screen3()
 	int86(0x10,&r,&r1);
 	return r1.x.ax;
 	}
+int getccc()
+{
+	union REGS r1;
+	union REGS r;
+	r.h.ah=0;
+	r.h.al=0x0;
+	int86(0x16,&r,&r1);
+	return r1.x.ax;
+	}
+
 
 
 int hlines(hlinex,hliney,hlinex1,hliney1,hlinecolor)
