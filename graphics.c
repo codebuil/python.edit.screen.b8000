@@ -39,7 +39,7 @@ l=l-500;
 
 }
 refresh();
-a=getchar();
+a=getccc();
 screen3();
 }
 
@@ -59,6 +59,15 @@ int screen3()
 	r.h.ah=0;
 	r.h.al=0x3;
 	int86(0x10,&r,&r1);
+	return r1.x.ax;
+	}
+int getccc()
+{
+	union REGS r1;
+	union REGS r;
+	r.h.ah=0;
+	r.h.al=0x0;
+	int86(0x16,&r,&r1);
 	return r1.x.ax;
 	}
 
