@@ -38,7 +38,7 @@ d=ll;
 l=l-500;
 
 }
-refresh();
+
 a=getccc();
 screen3();
 }
@@ -63,12 +63,7 @@ int screen3()
 	}
 int getccc()
 {
-	union REGS r1;
-	union REGS r;
-	r.h.ah=0;
-	r.h.al=0x0;
-	int86(0x16,&r,&r1);
-	return r1.x.ax;
+	return (int)getchar();
 	}
 
 int hlines(hlinex,hliney,hlinex1,hliney1,hlinecolor)
@@ -105,30 +100,29 @@ int r;
 			
 	xxx=yy*320+xx;
 	ir=screenptr;
-	movedata(__get_ds(),&ir,__get_cs(),0x80,2);
+	movedata(__get_ds(),&ir,__get_cs(),0xf080,2);
 	ir=xxx;
-	movedata(__get_ds(),&ir,__get_cs(),0x82,2);
+	movedata(__get_ds(),&ir,__get_cs(),0xf082,2);
 	ir=xxa;
-	movedata(__get_ds(),&ir,__get_cs(),0x84,2);
-	movedata(__get_ds(),&hlinecolor,__get_cs(),0x86,1);
+	movedata(__get_ds(),&ir,__get_cs(),0xf084,2);
+	movedata(__get_ds(),&hlinecolor,__get_cs(),0xf086,1);
 	asm "push ds";
 	asm "push cs";
 	asm "pop ds";
-	asm "mov bx,[0x82]";
-	asm "mov dx,[0x86]";
+	asm "mov di,[0xf082]";
+	asm "mov dx,[0xf086]";
 	
-	asm "mov cx,[0x84]";
-	asm "mov ax,[0x80]";
+	asm "mov cx,[0xf084]";
+	asm "mov ax,[0xf080]";
 	asm "push ax";
-	asm "pop ds";
+	asm "pop es";
 	asm "mov al,dl";
 	asm "xor dx,dx";
+
 asm "label2:";
-asm "mov [bx],al";
-asm "inc bx";
-asm "dec cx";
-asm "cmp cx,dx";
-	asm "jnz label2";
+asm "cld";
+asm "rep";
+asm "stosb";
 	asm "pop ds";
 			
 			
@@ -143,34 +137,34 @@ asm "cmp cx,dx";
 	}
 
 
-		
 void cls13(cls1)
 {
 	int i;
 	i=screenptr;
-	movedata(__get_ds(),&i,__get_cs(),0x80,2);
-	i=320*200;
-	movedata(__get_ds(),&i,__get_cs(),0x82,2);
-	movedata(__get_ds(),&cls1,__get_cs(),0x84,1);
+	movedata(__get_ds(),&i,__get_cs(),0xf080,2);
+	i=320*200+1;
+	movedata(__get_ds(),&i,__get_cs(),0xf082,2);
+	movedata(__get_ds(),&cls1,__get_cs(),0xf084,1);
 	asm "push ds";
 	asm "push cs";
 	asm "pop ds";
-	asm "mov bx,[0x82]";
-	asm "mov cx,[0x84]";
-	asm "mov ax,[0x80]";
+	asm "mov cx,[0xf082]";
+	asm "mov dx,[0xf084]";
+	asm "mov ax,[0xf080]";
 	asm "push ax";
-	asm "pop ds";
+	asm "pop es";
+	asm "mov al,dl";
 	asm "xor dx,dx";
-	asm "mov al,cl";
-	
+	asm "mov di,dx";	
 asm "label1:";
-asm "mov [bx],al";
-asm "dec bx";
-asm "cmp bx,dx";
-	asm "jnz label1";
+asm "cld";
+asm "rep";
+asm "stosb";
+	
 	asm "pop ds";
 	
 	}
+
 
 
 
