@@ -1,4 +1,4 @@
-#bcc.cross.compiler.bcc
+#x86.from.i386
 
 
 
