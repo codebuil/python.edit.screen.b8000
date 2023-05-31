@@ -1,4 +1,4 @@
-#x86.from.i386
+#linux.kernel.boot.load
 
 
 
