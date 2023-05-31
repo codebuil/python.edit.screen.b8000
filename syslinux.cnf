@@ -1,4 +1,0 @@
-default mysys
-label mysys
-	kernel ldlinux.elf
-	
