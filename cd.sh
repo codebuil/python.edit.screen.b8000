@@ -7,7 +7,7 @@ cp isolinux.cfg CD_root/isolinux/isolinux.cfg
 cp isolinux.cfg CD_root/isolinux.cfg
 cp isolinux.cfg CD_root/images/isolinux.cfg
 cp ldlinux.c32 CD_root/isolinux/ldlinux.c32
-cp ldlinux.elf CD_root/kernel/ldlinux.elf
+cp isohdpfx.bin CD_root/kernel/isohdpfx.bin
 cp kernel.bin CD_root/kernel/kernel.bin
 cp memdisk CD_root/kernel/memdisk
 mkisofs -o myos.iso -input-charset utf-8 -b isolinux/isolinux.bin -no-emul-boot -boot-load-size 4  -boot-info-table ./CD_root 
