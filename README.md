@@ -1,5 +1,5 @@
 #linux.kernel.boot.load
-a system load boot of a lua demo on a linux system
+a system load boot of a ram disk drive read and write to load a image
 
 
 
