@@ -11,5 +11,5 @@ printf "$roots/$a\n"
 sudo cp -r "$roots/$a" "$backs/"
 chmod 777 "$backs/$a"
 done <$temps
-chmod 777
+
 
