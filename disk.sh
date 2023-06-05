@@ -1,9 +1,15 @@
-printf "\ec\e[44;30m\n"
-dd if=/dev/zero of=out.img  bs=143k count=100
-sudo mkfs.vfat -n '_' -S 512 -f 2 -F 12 out.img
+printf "\ec\e[44;37m\n"
+imgs="../out.img"
+printf $imgs
+rm *.img
+rm *.iso
+rm $imgs
 sudo mkdir /mnt/new
-chmod 777 out.img
-sudo mount -t vfat -o loop out.img /mnt/new
+dd if=/dev/zero of=$imgs  bs=1M count=20
+chmod 777 $imgs
+sudo losetup --find --show $imgs /dev/loop0 
+sudo mkfs -t vfat /dev/loop0
+sudo mount /dev/loop0 /mnt/new
 roots="/mnt/new"
 pppp=$(pwd)
 cd $roots
@@ -12,5 +18,20 @@ for a in $list
 do
 	sudo mkdir -p "$a"
 done
+cd boot
+backs=./
+roots="$pppp"
+mkdir -p  "$backs"
+temps="/tmp/tmp"
+ls "$roots"> $temps
+
+
+while read a;do
+printf "$roots/$a\n"
+sudo cp -r "$roots/$a" "$backs/"
+sudo chmod 777 "$backs/$a"
+done <$temps
+
 cd $pppp
-sudo umount $roots
+sudo umount /dev/loop0
+sudo losetup --detach /dev/loop0
