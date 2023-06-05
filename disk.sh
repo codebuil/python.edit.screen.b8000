@@ -5,7 +5,7 @@ rm *.img
 rm *.iso
 rm $imgs
 sudo mkdir /mnt/new
-dd if=/dev/zero of=$imgs  bs=1M count=20
+dd if=/dev/zero of=$imgs  bs=1M count=5
 chmod 777 $imgs
 sudo losetup --find --show $imgs /dev/loop0 
 sudo mkfs -t vfat /dev/loop0
@@ -35,3 +35,4 @@ done <$temps
 cd $pppp
 sudo umount /dev/loop0
 sudo losetup --detach /dev/loop0
+dd conv=notrunc if=mbr.bin of=$imgs seek=72
