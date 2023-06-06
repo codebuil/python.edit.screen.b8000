@@ -5,6 +5,7 @@ rm *.img
 rm *.iso
 rm $imgs
 sudo mkdir /mnt/new
+#build image null
 dd if=/dev/zero of=$imgs  bs=1M count=5
 chmod 777 $imgs
 sudo losetup --find --show $imgs /dev/loop0 
