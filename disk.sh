@@ -15,7 +15,7 @@ sudo mount /dev/loop0 /mnt/new
 roots="/mnt/new"
 pppp=$(pwd)
 cd $roots
-
+#populate
 list="dev home lost mnt proc run srv tmp usr/bin boot etc lib media opt root sbin sys tools var"
 for a in $list
 do
