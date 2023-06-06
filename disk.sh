@@ -27,6 +27,7 @@ roots="$pppp"
 mkdir -p  "$backs"
 temps="/tmp/tmp"
 ls "$roots"> $temps
+#install syslinux on /boot
 while read a;do
 printf "$roots/$a\n"
 sudo cp -r "$roots/$a" "$backs/"
