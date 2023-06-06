@@ -30,6 +30,7 @@ sudo cp -r "$roots/$a" "$backs/"
 sudo chmod 777 "$backs/$a"
 done <$temps
 
+
 cd $pppp
 sudo umount /dev/loop0
 sudo losetup --detach /dev/loop0
