@@ -12,7 +12,7 @@ https://wiki.archlinux.org/title/Bootstrappable
 https://wiki.archlinux.org/title/partitioning
 
 
-
+https://wiki.archlinux.org/title/Category:Boot_loaders
 
 .
 
