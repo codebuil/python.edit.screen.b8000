@@ -9,6 +9,9 @@ https://wiki.archlinux.org/title/Arch_boot_process
 https://wiki.archlinux.org/title/Bootstrappable
 
 
+https://wiki.archlinux.org/title/partitioning
+
+
 
 
 .
