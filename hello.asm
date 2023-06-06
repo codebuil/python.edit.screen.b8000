@@ -1,10 +1,11 @@
 org 101000h
 [bits 32]
 head:
+mov eax,0x21cd4cff
 push es
 mov ax,0
 mov es,ax
-mov eax,0x21cd4cff
+
 mov ebx,0b8000h
 mov al,17h
 mov ecx,4000
