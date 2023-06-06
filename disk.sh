@@ -36,3 +36,4 @@ sudo umount /dev/loop0
 sudo losetup --detach /dev/loop0
 dd conv=notrunc if=mbr.bin of=$imgs bs=1 seek=72
 
+
