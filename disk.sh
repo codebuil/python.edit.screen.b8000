@@ -9,6 +9,7 @@ sudo mkdir /mnt/new
 dd if=/dev/zero of=$imgs  bs=1M count=5
 chmod 777 $imgs
 sudo losetup --find --show $imgs /dev/loop0 
+#create a empty disk image
 sudo mkfs -t vfat /dev/loop0
 sudo mount /dev/loop0 /mnt/new
 roots="/mnt/new"
