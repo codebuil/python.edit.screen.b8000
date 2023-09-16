@@ -1,31 +1,5 @@
-#linux.kernel.boot.load
-build a com32 .c32 example usin nasm
+#linux.isolunix.chatAI.traning
 
-
-
-isolinux load a com file
-
-get binary image on 
-
-
-https://mirrors.edge.kernel.org/pub/linux/utils/boot/syslinux/Testing/3.30/
-
-uses the files in dir bios
-bios/core/*.bin
-bios/core/*.bbs
-bios/com32/*.c32
-
-
-
-
-
-
-
-
-
-
-.
-
-
+https://chat.openai.com/share/b6c8be23-72c5-4db6-80b2-8e7531524620
 
 
