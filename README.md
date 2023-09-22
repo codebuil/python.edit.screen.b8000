@@ -1,6 +1,6 @@
-# pack.traced.intranet
+# python.edit.b8000
 
+save screen to you operation system
 
-make yor intrane simulator 
 
 
