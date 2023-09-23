@@ -36,47 +36,36 @@ def save_to_file():
                     if char <= 'F':
                         strs+=f"{char}"
                         ints=ints+1
-            else:
-                
-                if char == chr(ord('\\')):
+                if ints > 2:
+                    print(f"{char},{strs}")
+                    ccolor=chr(int(strs,16))
                     strs=""
+                    ints=0
+
+            else:
+                if char == chr(ord('\\')):
                     ints=1
-                    char=chr(z)
-            if char == '\n':
-                 bcolor=0
-                 for char in(bcolor,x_value):
-                     formatted_text += f" {ccolor}"
-                 formatted_text += f"\n"
-            if char == '\r':
-                 bcolor=0
-                 for char in(bcolor,x_value):
-                     formatted_text += f" {ccolor}"
-                 formatted_text += f"\n"
-            if ints == 0:
-                    if char != '\n':
-                        if char != '\r':
-                            bcolor=bcolor+1
-                            formatted_text += f"{char}{ccolor}"
-                            if bcolor >= x_value:
+                if char == '\n':
+                    bcolor=0
+                    for char in(bcolor,x_value):
+                        formatted_text += f" {ccolor}"
+                    formatted_text += f"\n" 
+
+                
+                else:
+                     if char != '\r':
+                         if ints==0:
+                             bcolor=bcolor+1
+                             formatted_text += f"{char}{ccolor}"
+                             if bcolor >= x_value:
                                  bcolor=0
                                  formatted_text += f"\n"
-                        
-            else:
-                if char == chr(ord('\\')):
-                    ints=0
-            if ints > 2:
-                print(f"{char},{strs}")
-                ccolor=chr(int(strs))
-                ints=0
-
-            
-        return formatted_text
-
-    formatted_text = format_text(input_text)  
-
+        return formatted_text    
+    formatted_text = format_text(input_text)            
     # Salva o texto formatado no arquivo
     with open(filename, 'w') as file:
-        file.write(formatted_text)
+        file.write("".join(formatted_text))
+        
 
 # Cria a janela principal
 root = tk.Tk()
@@ -118,4 +107,3 @@ save_button.configure(bg="blue")
 save_button.pack()
 
 root.mainloop()
-
